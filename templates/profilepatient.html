@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Patient Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="{{url_for('static', filename='/assetss/img/icon.ico')}}" type="image/x-icon"/>
+
+    <!-- Fonts and icons -->
+    
+	<script src="{{url_for('static', filename='/assetss/js/plugin/webfont/webfont.min.js')}}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/static/assetss/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+    <!-- CSS Files -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{url_for('static', filename='/assetss/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='/assetss/css/atlantis.min.css')}}">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{url_for('static', filename='/assetss/css/demo.css')}}">
+    <style>
+ @media (min-width: 1200px){
+.container {
+    max-width: 1550px;
+}
+ }
+
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+    </style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="blue">
+				
+				<a href="index.html" class="logo">
+					<img src="/static/assetss/img/logo.png" alt="navbar brand" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+				
+				<div class="container-fluid">
+					
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
+						
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="/static/assetss/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="/static/assetss/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4></h4>
+												<p class="text-muted"></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+											</div>
+										</div>
+									</li>
+									<li>
+									
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="/patientlogin">Logout</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+    <div class="main-panel">
+			<div class="content">
+      <div class="container emp-profile">
+                  <form method="post">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="profile-img">
+                                  <img src="https://st.depositphotos.com/2965415/4285/v/600/depositphotos_42856777-stock-illustration-friendly-doctor-flat-cartoon-character.jpg" alt=""/>
+                                  
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="profile-head" style="
+                              FONT-SIZE: 20PX;">
+                                          <h1>
+                                              {{user1.FirstName}} {{user1.LastName}}
+                                          </h1>
+                                          <h3>
+                                              {{user1.Profession}}
+                                          </h3>
+                                          
+                                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                      <li class="nav-item">
+                                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="col-md-2">
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modaledit">
+                                  See Modal with Form
+                                </button>  
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="profile-work">
+                           
+                                  
+                              </div>
+                          </div>
+                          <div class="col-md-8">
+                              <div class="tab-content profile-tab" id="myTabContent">
+                                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <label>User Id</label>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <p>{{user1.id}}</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <label>Name</label>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <p>{{user1.FirstName}} {{user1.LastName}}</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <label>Email</label>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <p>{{user1.Email}}</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <label>Phone</label>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <p>{{user1.Ph_no}}</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <label>Profession</label>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                      <p>{{user1.Profession}}</p>
+                                                  </div>
+                                              </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <label>Experience</label>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <p>Expert</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <label>Hourly Rate</label>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <p>10$/hr</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <label>Total Projects</label>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <p>230</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <label>English Level</label>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <p>Expert</p>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      <label>Availability</label>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                      <p>6 months</p>
+                                                  </div>
+                                              </div>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <label>Your Bio</label><br/>
+                                              <p>Your detail description</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>           
+              </div>
+  </div>
+  </div>
+  </div>
+		
+		<!-- End Custom template -->
+    </div>
+    <div id="modaledit" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update Information</h4></div>
+                        <div class="modal-body" >
+                            
+                        <form action="/docupdate" method="POST">
+                            <span>Please Fill all the fields</span>
+                                <div class="form-group">
+                                    <label>Firstame:</label>
+                                    <input type="hidden"  name="id" value="" >
+                                    <input type="text" class="form-control" name="name1" value= >
+                                </div>
+                                <div class="form-group">
+                                <label>Lastname:</label>
+                                <input type="text" class="form-control" name="name2" value= >
+                                </div>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="text" class="form-control" name="email" value= >
+                                </div>
+                                <div class="form-group">
+                                <label>Phone:</label>
+                                <input type="text" class="form-control" name="phone" value= >
+                                </div>
+                                <div class="form-group">
+                                    <label>Profession:</label>
+                                    <input type ="text" class="form-control" name="pro" value= >
+                                </div>
+                                
+                                <div class="form-group">
+                                <button class="btn btn-primary" type="submit">Update</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+
+                    </form>
+                    
+                 
+                </div>
+            </div>
+     </div> 
+    
+    </table>
+   </div>
+
+
+
+
+
+
+
+
+
+	<!--   Core JS Files   -->
+	<script src="/static/assetss/js/core/jquery.3.2.1.min.js"></script>
+	<script src="/static/assetss/js/core/popper.min.js"></script>
+	<script src="/static/assetss/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="/static/assetss/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="/static/assetss/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="/static/assetss/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+	<!-- Chart JS -->
+	<script src="/static/assetss/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="/static/assetss/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="/static/assetss/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="/static/assetss/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="/static/assetss/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="/static/assetss/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="/static/assetss/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="/static/assetss/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="/static/assetss/js/atlantis.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assetss/js/setting-demo.js"></script>
+	<script src="/static/assetss/js/demo.js"></script>
+	<script>
+
+	
+    $(document).ready(function(){
+        // Activate tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+        
+        // Select/Deselect checkboxes
+        var checkbox = $('table tbody input[type="checkbox"]');
+        $("#selectAll").click(function(){
+            if(this.checked){
+                checkbox.each(function(){
+                    this.checked = true;                        
+                });
+            } else{
+                checkbox.each(function(){
+                    this.checked = false;                        
+                });
+            } 
+        });
+        checkbox.click(function(){
+            if(!this.checked){
+                $("#selectAll").prop("checked", false);
+            }
+        });
+    });
+</script>
+	
+</body>
+</html>

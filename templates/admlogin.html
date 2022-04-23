@@ -1,0 +1,66 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %} 
+
+	<!-- [ auth-signin ] start -->
+	<div class="auth-wrapper">
+		<div class="auth-content">
+			<div class="card">
+				<div class="row align-items-center text-center">
+					<div class="col-md-12">
+						<div class="card-body">
+
+							<img src="/static/assets/images/logo2.png" alt="" class="img-fluid mb-4">
+							<h4 class="mb-3 f-w-400">
+								<a href="#">Admin</a> - Signin
+							</h4>
+							{% with messages = get_flashed_messages() %}
+								{% if messages %}
+								<div class="notification is-danger">
+								<h6 style="text-align: center;color: red;">{{ messages[0] }}</h6>
+								</div>
+								{% endif %}
+								{% endwith %}
+							<!-- dummy spacer -->
+							<p> <br /> </p>						
+							<form role="form" method="post" action="/admlogin">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i class="feather icon-user"></i></span>
+									</div>
+									<input class="form-control" placeholder="Username" type="text" name="username" >
+								</div>
+								<div class="input-group mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i class="feather icon-lock"></i></span>
+									</div>
+									<input class="form-control" placeholder="Password" type="password" name="password" 	>
+								</div>
+								<div class="form-group text-left mt-2">
+									<div class="checkbox checkbox-primary d-inline">
+										<input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" >
+										<label for="checkbox-fill-a1" class="cr"> Save credentials</label>
+									</div>
+								</div>
+								<button type="submit" name="login" class="btn btn-block btn-primary mb-4">Signin</button>
+							</form>
+							<!-- <a href="#!" class="forgot-password-link">Forgot password?</a> -->
+                   		 	<p class="login-card-footer-text">Are you a Doctor? <a href="/doctorlogin" class="text-reset">Login here</a></p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [ auth-signin ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<script src="/static/assets/js/waves.min.js"></script>
+
+{% endblock javascripts %} 

@@ -1,0 +1,13 @@
+{
+"params":
+{
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/hdp"
+   
+
+    
+
+
+
+}
+}

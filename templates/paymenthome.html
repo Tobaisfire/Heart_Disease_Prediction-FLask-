@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instamojo Payment Integration in Python</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+   <style>
+       .container{
+            width: 500px;
+            margin-top: 10%;
+       }
+   </style>
+  </head>
+  <body>
+    <div class="container" >
+      <h1 class="text-center">Instamojo Payment</h1>
+      <form action="/pay" method="POST">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            required
+            name="name"
+            id=""
+            placeholder="Name"
+          />
+        </div>
+        <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="purpose"
+              id=""
+              placeholder="Purpose"
+            />
+          </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            required
+            name="email"
+            id=""
+            placeholder="Email Id"
+          />
+        </div>
+        
+        <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              required
+              name="amount"
+              id=""
+              placeholder="Amount"
+            />
+          </div>
+          
+        <div class="form-group">
+            <button class="btn btn-danger btn-block">
+                Create Payment Link
+            </button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>

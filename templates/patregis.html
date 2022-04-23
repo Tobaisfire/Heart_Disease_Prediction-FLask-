@@ -1,0 +1,161 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Form Elements {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	
+
+    <!-- [ Main Content ] start -->
+    <section class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h3 class="m-b-10">READ THIS!</h3>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#!">Please fill this form</a></li>
+                                <li class="breadcrumb-item"><a href="#!">All Fields are Mandatory</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="row ">
+                <!-- [ form-element ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2> PATIENT Registration</h2>
+                        </div>
+                        <div class="card-body ">
+                            <h5>Detials to be filled</h5>
+                            <hr>
+                            <div class="row ">
+                                <div class="col-md-8">
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <div class="notification is-danger">
+                                <h5 style="text-align: center;color: red;">{{ messages[0] }}</h5>
+                                </div>
+                                {% endif %}
+                                {% endwith %}
+                                    <form action="/register"  method="POST">
+                 
+                                        <div class="row">
+                        
+                                            <!-- First Name -->
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-user text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="firstname" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                        
+                                            <!-- Last Name -->
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-user text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="lastname" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                        
+                                            <!-- Email Address -->
+                                            <div class="input-group col-lg-12 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-envelope text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                        
+                                            <!-- Phone Number -->
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-phone-square text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="phone" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                                            </div>.
+                        
+                        
+                                            <!-- Job -->
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-black-tie text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="Pro" type="text" name="Pro" placeholder="Profession" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                                            <!--USERNAME-->
+                                           
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-user text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="uname" type="text" name="uname" placeholder="Enter Username" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                                            
+                                            <!-- Password -->
+                                            <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-lock text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                                            </div>
+                                            <!-- <div class="input-group col-lg-6 mb-4">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                        <i class="fa fa-lock text-muted"></i>
+                                                    </span>
+                                                </div>
+                                                <input id="password" type="password" name="password" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                                            </div> -->
+                                        </div>
+
+                                            <!-- Submit Button -->
+                                            <div>
+                                            <div class="form-group col-sm-6 mx-auto">
+                                                <button class="btn btn-primary btn-block py-2">
+                                                    <span class="font-weight-bold">Register a New Patient</span>
+                                                </button>
+                                            </div>
+                                           <div class=mssg>{{msg}}</div>
+                                           </div>
+                                            <!-- Already Registered -->
+                                           
+                        
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                           
+            <!-- [ Main Content ] end -->
+
+        
+    </section>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

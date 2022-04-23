@@ -1,0 +1,169 @@
+                                
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	 
+                <div class="pcoded-main-container">
+                    <div class="pcoded-content">                          
+                        
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body ">
+                                
+                                <form   action="/predict " method="post"  id="contact_form">
+                                
+                                <!-- Form Name -->
+                                <legend><center><h2><b>Check Your Heart Status!</b></h2></center></legend><br>
+
+                                <!-- Text input-->
+                               
+                                <div class="row">
+                                    
+                                     
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="age" placeholder="Age" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="sex" placeholder="Gender: Male:1 or Female:0" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="cp" placeholder="Cerebral palsy" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+
+
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="trestbps" placeholder="resting blood pressure" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="cholestrol" placeholder="cholestrol" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="Fbs" placeholder="Fasting blood sugar" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                   
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="restecg" placeholder="restecg" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                   
+                            
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="thalach" placeholder="thalach" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="exang" placeholder="exang" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="oldpeak" placeholder="oldpeak" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="slope" placeholder="slope" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="ca" placeholder="ca" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                    <div class="input-group col-lg-6 mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                                <i class="fa fa-user text-muted"></i>
+                                            </span>
+                                        </div>
+                                        <input  name="thal" placeholder="thal" class="form-control"  type="text" class="form-control bg-white border-left-0 border-md">
+                                    </div>
+                                </div>
+                                <br>
+                                    <div class="form-group">
+                                        <h5 style="color:red;"> {{prediction_text}} </h5>
+                                        <h5 style="color:green;"> {{prediction_text2}} </h5>
+                                        <div class="col-md-4"><br>
+                                          <button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                                    </div>
+                               
+                                    <!-- Text input-->
+                                 <br>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Apex Chart -->
+    <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <!-- custom-chart js -->
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+
+{% endblock javascripts %}

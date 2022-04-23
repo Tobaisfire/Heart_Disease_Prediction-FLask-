@@ -1,0 +1,16 @@
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 3px solid #ced4da;
+    border-radius: .25rem;
+}
+.login-border {
+    border: 3px solid #ced4da;
+  }

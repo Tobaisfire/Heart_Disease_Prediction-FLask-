@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "C:\\Program Files\\Python39\\python.exe",
+    "python.testing.pytestArgs": [
+        "tutorial-env"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

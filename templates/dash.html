@@ -1,0 +1,317 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <!-- <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Dashboard Analytics</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#!">Dashboard Analytics</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="row">
+                <!-- order-card start -->
+             <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-blue order-card">
+                        <div class="card-body">
+                            <h6 class="text-white">Patients</h6>
+                            <h2 class="text-right text-white"><i class="feather icon-shopping-cart float-left"></i><span>{{count}}</span></h2>
+                            <p class="m-b-0">Test Completed<span class="float-right">{{count}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-green order-card">
+                        <div class="card-body">
+                            <h6 class="text-white">Doctors</h6>
+                            <h2 class="text-right text-white"><i class="feather icon-tag float-left"></i><span>{{count1}}</span></h2>
+                            <p class="m-b-0">Currently Working<span class="float-right">{{count1}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-yellow order-card">
+                        <div class="card-body">
+                            <h6 class="text-white">Revenue</h6>
+                            <h2 class="text-right text-white"><i class="feather icon-repeat float-left"></i><span>Rs.42,562</span></h2>
+                            <p class="m-b-0">This Month<span class="float-right">Rs.5,032</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-red order-card">
+                        <div class="card-body">
+                            <h6 class="text-white">Total DataSet</h6>
+                            <h2 class="text-right text-white"><i class="feather icon-award float-left"></i><span>{{count2}}</span></h2>
+                            <p class="m-b-0">This Month<span class="float-right">{{c22}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- order-card end -->
+                <!-- users visite start -->
+                <div class="col-md-12 col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Unique Visitor</h5>
+                        </div>
+                        <div class="card-body pl-0 pb-0">
+                            <div id="unique-visitor-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body bg-patern">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span>Patients</span>
+                                        </div>
+                                        <div class="col text-right">
+                                            <h2 class="mb-0">826</h2>
+                                            <span class="text-c-green">8.2%<i class="feather icon-trending-up ml-1"></i></span>
+                                        </div>
+                                    </div>
+                                    <div id="customer-chart"></div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <h3 class="m-0"><i class="fas fa-circle f-10 m-r-5 text-success"></i>674</h3>
+                                            <span class="ml-3">New</span>
+                                        </div>
+                                        <div class="col">
+                                            <h3 class="m-0"><i class="fas fa-circle text-primary f-10 m-r-5"></i>182</h3>
+                                            <span class="ml-3">Return</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body bg-patern-white">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <span>DataSet</span>
+                                        </div>
+                                        <div class="col text-right">
+                                            <h2 class="mb-0 text-white">826</h2>
+                                            <span class="text-white">8.2%<i class="feather icon-trending-up ml-1"></i></span>
+                                        </div>
+                                    </div>
+                                    <div id="customer-chart1"></div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-success"></i>674</h3>
+                                            <span class="ml-3">New</span>
+                                        </div>
+                                        <div class="col">
+                                            <h3 class="m-0 text-white"><i class="fas fa-circle f-10 m-r-5 text-white"></i>182</h3>
+                                            <span class="ml-3">Return</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- users visite end -->
+
+
+               
+                <div class="col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope-open text-c-blue d-block f-40"></i>
+                            <h4 class="m-t-20"><span class="text-c-blue">1.27k</span> User Emails's</h4>
+                            <p class="m-b-20">Your main list is growing</p>
+                            <button class="btn btn-primary btn-sm btn-round" onclick="window.location.href='/emailcount';">Manage List</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fab fa-twitter text-c-green d-block f-40"></i>
+                            <h4 class="m-t-20"><span class="text-c-blgreenue">+40</span> Followers</h4>
+                            <p class="m-b-20">Your main list is growing</p>
+                            <button class="btn btn-success btn-sm btn-round">Check them out</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- social statustic end -->
+                <!-- account-section start -->
+                <div class="col-lg-12">
+                    <div class="card table-card">
+                        <div class="card-header">
+                            <h5>Dataset monitor</h5>
+                            <div class="card-header-right">
+                                <div class="btn-group card-option">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="feather icon-more-horizontal"></i>
+                                    </button>
+                                    <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                        <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                        <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                        <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                        <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="nav nav-pills nav-fill mt-3 border-bottom pb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="feather icon-film m-r-5"></i> Datasets</a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="table-responsive">
+                                        <div class="customer-scroll" style="height:420px;position:relative;">
+                                            <table class="table table-hover m-b-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th><span>age</span></th>
+                                                        <th><span>sex <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>cp <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>trestbps <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>chol <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>fbs <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>restecg<a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>thalach <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>exang <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>oldpeak <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>slope <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>ca <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>thal <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+                                                        <th><span>target <a class="help" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><i class="feather icon-help-circle f-16"></i></a></span></th>
+
+                                                    </tr>
+                                                </thead>
+                                                {% for data in d %}
+    
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{data.Age}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-danger rounded" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Sex}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Cp}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-warning rounded" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Trestbps}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Chol}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Fbs}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Restecg}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Thalach}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-info rounded" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Exang}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-danger rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Oldpeak}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-warning rounded" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Slope}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Ca}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Thal}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{data.Target}}
+                                                            <div class="progress mt-1" style="height:4px;">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                     
+                                                    </tr>
+                                                
+          
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Customer overview end -->
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Apex Chart -->
+    <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <!-- custom-chart js -->
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+
+{% endblock javascripts %}

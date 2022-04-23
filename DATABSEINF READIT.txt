@@ -1,0 +1,29 @@
+Create databse name of :-  hdp
+
+in that create 1st table name :- hdpuser 
+
+hdpuser:-
+ 
+ id
+ fristname
+ lastname 
+ email
+ ph_no
+ profession
+ username
+ password
+
+ ^^^^^^^^^^^^^^^^^^^^^^  with small letters ^^^^^^^^^^^^^^^^^^^^^6
+
+
+ now doc
+
+ create second table name:- hdpdco
+  id
+  name
+  username
+  password
+
+
+
+  done now run:::::

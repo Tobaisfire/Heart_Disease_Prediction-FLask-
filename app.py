@@ -10,7 +10,7 @@ import numpy as np
 
 local_server = True
 
-model = pickle.load(open('modal2.pkl','rb'))
+model = pickle.load(open('D:\keval\study\Projects\hdp\Heart_Disease_Prediction-FLask-\modal2.pkl','rb'))
 
 
 app = Flask(__name__)
@@ -114,6 +114,8 @@ def admlogin():
 #     return render_template('dash.html',admin1=admin1)
 
 
+
+
 @app.route('/register',methods=['GET', 'POST'])
 def register():
     msg = ''
@@ -166,11 +168,11 @@ def doclogin():
        
 @app.route('/dash')
 def dash():
+    
     d = Dataset.query.all()
     co = Hdpuser.query.all()
     co1 = Doclogs.query.all()
     co2 = Dataset.query.all()
-    
     count = 0
     count1 = 0
     count2 = 0
@@ -181,8 +183,8 @@ def dash():
     for i in co2:
         count2= count2+1
     c22 = count2//2
-    
     return render_template('dash.html',d = d,count=count,count1=count1,count2=count2,c22=c22)
+ 
 
 @app.route('/patientlogin', methods=['GET', 'POST'])
 def patlog():
@@ -275,7 +277,7 @@ def predict():
     if request.method == 'POST':
    
 
-        model = pickle.load(open('modal2.pkl','rb'))
+        model = pickle.load(open('D:\keval\study\Projects\hdp\Heart_Disease_Prediction-FLask-\modal2.pkl','rb'))
        
         int_features = [ int(x) for x in request.form.values()]
          
@@ -301,7 +303,7 @@ def docpredict():
     
     if request.method == 'POST':
 
-        model = pickle.load(open('modal2.pkl','rb'))
+        model = pickle.load(open('D:\keval\study\Projects\hdp\Heart_Disease_Prediction-FLask-\modal2.pkl','rb'))
         
         int_features = [int(x) for x in request.form.values()]
         final_features=[np.array(int_features)]
@@ -397,7 +399,7 @@ def admindel(id):
     db.session.delete(c)
     db.session.commit()
     flash("Patient Deleted Successfully")
-    return redirect('pattable')
+    return redirect('/pattable')
 
 #Admin Deleting all data of Doctors-------------------------------------------------------------------
 @app.route('/admindeldoc/<id>/', methods = ['GET', 'POST'])

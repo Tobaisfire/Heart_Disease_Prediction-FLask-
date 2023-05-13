@@ -1,8 +1,23 @@
+Mastercard -
 
-    Card Number – 4242 4242 4242 4242
+Card Number: 5214 4789 0000 5330
 
-    Expiry Date – 01/20
+Expiry: 01/2025
 
-    CVV – 111
+CVV: 123
 
-    Second Factor Authentication Code – 1221
+OTP: 111111
+
+VISA -
+
+Card Number: 4065 6200 0000 1239
+
+Expiry: 01/2025 CVV: 123 OTP: 111111
+
+Debit Card:
+
+Card Number: 4242 4242 4242 4242
+
+Expiry: 01/25
+
+CVV: 111

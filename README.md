@@ -43,6 +43,8 @@ Log in as a patient using the provided credentials.
 Access personal medical records, view heart disease predictions, and manage the profile.
 Real-time Data Feeding:
 
+
+
 ![dataset](https://github.com/Tobaisfire/Heart_Disease_Prediction-FLask-/assets/67000746/38c5c466-7a94-42b9-802e-2090274964d5)
 
 ![table](https://github.com/Tobaisfire/Heart_Disease_Prediction-FLask-/assets/67000746/de2eb574-7ec4-45dd-9ce1-d1847ca4a4e1)
